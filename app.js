@@ -1,6 +1,6 @@
 // Http library
 const http = require('http');
-const SHA256 = require('crypto-js/256');
+const SHA256 = require('crypto-js/sha256');
 
 // Http port
 const port = 8080;
@@ -26,7 +26,7 @@ blocks.push(block_2);
  */
 const app = http.createServer(function(request, response) {
   response.writeHead(200, { 'Content-Type': 'application/json' });
-  response.write(SHA256(JSON.stringify(block)).toString());
+  response.write(SHA256(JSON.stringify(block_2)).toString());
   response.end();
 });
 
